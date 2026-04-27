@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cía. de Teatro Frotalámparas</title>
+  <meta name="description" content="Compañía de Teatro Frotalámparas — Archivo histórico de producciones, espectáculos y trayectoria artística (2011–2019).">
+  <style>
+    /* ===== FUENTES Y RESET ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== VARIABLES DE COLOR (paleta original) ===== */
+    :root {
+      --bg:        #f5f0e8;
+      --bg-dark:   #ede8df;
+      --orange:    #d4621a;
+      --orange-lt: #e07a30;
+      --green:     #5a7a2e;
+      --text:      #2c2c2c;
+      --text-lt:   #555;
+      --border:    #c8b89a;
+      --white:     #fff;
+      --nav-bg:    #f0ebe0;
+    }
+
+    /* ===== BASE ===== */
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* Textura de fondo sutil */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== CABECERA / LOGO ===== */
+    header {
+      background: var(--nav-bg);
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--orange);
+      text-decoration: none;
+      padding: 12px 0;
+      line-height: 1.2;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 0.65rem;
+      font-family: 'Lato', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--text-lt);
+      text-transform: uppercase;
+    }
+
+    /* ===== NAVEGACIÓN ===== */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+
+    nav a {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #2c1a0a 0%, #5c3010 50%, #2c1a0a 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 70px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(212,98,26,0.3) 0%, transparent 70%);
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      color: var(--orange-lt);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      margin-bottom: 8px;
+    }
+
+    .hero .subtitle {
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+    }
+
+    /* ===== CONTENEDOR PRINCIPAL ===== */
+    main { max-width: 960px; margin: 0 auto; padding: 0 20px 60px; }
+
+    /* ===== SECCIONES ===== */
+    section {
+      padding: 60px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child { border-bottom: none; }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--orange);
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--orange);
+      display: inline-block;
+    }
+
+    /* ===== TEXTO GENERAL ===== */
+    .prose p {
+      margin-bottom: 1.2em;
+      text-align: justify;
+    }
+
+    .prose strong { color: var(--orange); }
+    .prose em { font-style: italic; }
+
+    /* ===== TARJETAS DE ESPECTÁCULO ===== */
+    .show-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    .show-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .show-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .show-card-header {
+      background: linear-gradient(135deg, #3a1e08, #6b3515);
+      color: var(--white);
+      padding: 18px 16px;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    .show-card-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.3;
+    }
+
+    .show-card-body { padding: 16px; }
+
+    .show-card-body p {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .show-card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: var(--white);
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+
+    .btn-show {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 2px solid var(--orange);
+      padding: 6px 14px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-show:hover {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    /* ===== MODAL DE ESPECTÁCULO ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 200;
+      overflow-y: auto;
+      padding: 30px 16px;
+    }
+
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+    .modal {
+      background: var(--bg);
+      max-width: 800px;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #2c1a0a, #5c3010);
+      color: var(--white);
+      padding: 28px 30px 22px;
+    }
+
+    .modal-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      color: var(--orange-lt);
+      margin-bottom: 6px;
+    }
+
+    .modal-header .tag { font-size: 0.75rem; opacity: 0.8; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.6rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .modal-close:hover { opacity: 1; }
+
+    .modal-body { padding: 28px 30px; }
+
+    .modal-layout {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 28px;
+    }
+
+    @media (max-width: 600px) {
+      .modal-layout { grid-template-columns: 1fr; }
+    }
+
+    .modal-desc p { margin-bottom: 1.1em; font-size: 0.95rem; text-align: justify; }
+    .modal-desc em { font-style: italic; }
+    .modal-desc strong { color: var(--orange); }
+
+    .modal-ficha {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      font-size: 0.82rem;
+    }
+
+    .modal-ficha h4 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ficha-row { margin-bottom: 10px; }
+    .ficha-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-lt); display: block; margin-bottom: 2px; }
+    .ficha-value { font-weight: 700; color: var(--text); }
+
+    .modal-videos { margin-top: 24px; }
+
+    .modal-videos h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #000;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .video-label {
+      font-size: 0.78rem;
+      color: var(--text-lt);
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    /* ===== FUNCIONES ===== */
+    .year-block { margin-bottom: 40px; }
+
+    .year-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--orange);
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .funciones-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .funciones-table th {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      text-align: left;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+    }
+
+    .funciones-table td {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      vertical-align: top;
+    }
+
+    .funciones-table tr:nth-child(even) td { background: var(--bg-dark); }
+
+    .func-show { font-weight: 700; color: var(--orange); }
+    .func-venue { color: var(--text-lt); font-size: 0.82rem; }
+
+    /* ===== GIRA ITALIA ===== */
+    .gira-block {
+      background: linear-gradient(135deg, #2c1a0a, #4a2510);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+
+    .gira-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--orange-lt);
+      margin-bottom: 4px;
+    }
+
+    .gira-block .gira-season {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 14px;
+    }
+
+    .gira-cities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .gira-city {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-size: 0.78rem;
+    }
+
+    /* ===== DIFUSIÓN ===== */
+    .difusion-list { list-style: none; }
+
+    .difusion-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .difusion-date {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--orange);
+      white-space: nowrap;
+    }
+
+    .difusion-title { font-weight: 700; margin-bottom: 2px; }
+    .difusion-source { font-size: 0.82rem; color: var(--text-lt); font-style: italic; }
+
+    /* ===== CONNECTING ARTISTS ===== */
+    .ca-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--green);
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+
+    /* ===== CONTACTO ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 580px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    .contact-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 24px;
+    }
+
+    .contact-item h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .contact-item p { font-size: 0.95rem; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1a0e04;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.82rem;
+    }
+
+    footer strong { color: var(--orange-lt); }
+
+    /* ===== AVISO ARCHIVO ===== */
+    .archive-banner {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-size: 0.85rem;
+      color: #856404;
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      nav a { font-size: 0.72rem; padding: 5px 8px; }
+      .show-grid { grid-template-columns: 1fr; }
+      .difusion-item { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    /* ===== SCROLL TO TOP ===== */
+    #back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--orange);
+      color: var(--white);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 99;
+    }
+
+    #back-top.visible { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- CABECERA -->
+<header>
+  <div class="header-inner">
+    <a href="#inicio" class="logo">
+      Cía. de Teatro<br>Frotalámparas
+      <span>Archivo Histórico · 2011–2019</span>
+    </a>
+    <nav>
+      <a href="#compania">La Compañía</a>
+      <a href="#espectaculos">Espectáculos</a>
+      <a href="#microteatro">Micro Teatro</a>
+      <a href="#funciones">Funciones</a>
+      <a href="#difusion">Difusión</a>
+      <a href="#connecting">Connecting Artists</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div id="inicio" class="hero">
+  <div class="hero-content">
+    <h1>Frotalámparas</h1>
+    <p class="subtitle">Compañía de Teatro · Sevilla &amp; Barcelona</p>
+    <p>Para Frotalámparas, el teatro constituye una forma de libre expresión social para la experiencia humana, donde cada persona encuentra la llave de su propia lámpara mágica.</p>
+  </div>
+</div>
+
+<div class="archive-banner" style="max-width:960px;margin:16px auto 0;padding:12px 20px;">
+  📁 Este sitio es el <strong>archivo histórico</strong> de la Compañía de Teatro Frotalámparas (2011–2019). La compañía se encuentra actualmente en pausa.
+</div>
+
+<main>
+
+  <!-- ===== LA COMPAÑÍA ===== -->
+  <section id="compania">
+    <h2 class="section-title">La Compañía</h2>
+    <div class="prose">
+      <p><strong>Frotalámparas</strong> es la combinación de un barcelonés explosivo en ideas y de una sevillana con las ideas muy claras para desarrollar. Así son <strong>Óscar Salamanca</strong> y <strong>Marta González</strong>, un tándem equilibrado en incansable trabajo y en pasión por la cultura.</p>
+      <p>Hace una década que se conocen y trabajan juntos en diversas compañías españolas y extranjeras, pero no es hasta 2011 cuando deciden fundar Frotalámparas, con la que prometen sacar "el genio" que llevan dentro.</p>
+      <p>En su trayectoria trazan dos líneas de trabajo: <strong>Original Version Spanish Theater</strong> y <strong>Creaciones Contemporáneas</strong>.</p>
+      <p>La primera de ellas, <strong>Original Version Spanish Theater</strong>, supone la consolidación de Frotalámparas en el mercado internacional, en el que desde 2012 realizan una producción por temporada de clásicos universales de la dramaturgia española. Desde entonces recorren Italia por más de 35 ciudades propiciando la internacionalización de nuestra cultura y el aprendizaje de nuestra lengua a través del teatro. En la actualidad trabajan por ampliar su público en otros países de la Unión Europea y en ofrecer esta herramienta de aprendizaje de español a estudiantes extranjeros en España.</p>
+      <p>Con <strong>Creaciones Contemporáneas</strong>, exploran y desarrollan producciones propias desde la dramaturgia hasta la puesta en escena final, con espectáculos para público adulto y otros para público familiar, en clave de comedia o drama según la ocasión, así ofreciendo una variada propuesta de piezas de MicroTeatro.</p>
+      <p><em>Convocaremos a nuestro genio en cada creación, en cada función…</em></p>
+    </div>
+  </section>
+
+  <!-- ===== ESPECTÁCULOS ===== -->
+  <section id="espectaculos">
+    <h2 class="section-title">Espectáculos</h2>
+    <div class="show-grid">
+
+      <!-- Vamos a por CR7 -->
+      <div class="show-card" onclick="openModal('cr7')">
+        <div class="show-card-header"><h3>Vamos a por CR7</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Creación Contemporánea · 2017</span>
+          <p>Cuatro trabajadores de una inmobiliaria deciden secuestrar a un futbolista famoso para conseguir una apuesta millonaria. Una obra de humor y verdad humana.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+      <!-- Adelante -->
+      <div class="show-card" onclick="openModal('adelante')">
+        <div class="show-card-header"><h3>Adelante</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Creación Contemporánea · 2011</span>
+          <p>Paso profesional contra la violencia de género. Una ventana abierta a la vida cotidiana de personajes que conviven en tiempo y espacio sin saberlo.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+      <!-- La Máquina del Tiempo -->
+      <div class="show-card" onclick="openModal('maquina')">
+        <div class="show-card-header"><h3>La Máquina del Tiempo</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Familiar · Teatro Bus · 2017</span>
+          <p>Espectáculo familiar diseñado para Teatro Bus Sevilla. Un viaje por la historia de Sevilla a bordo de un autobús convertido en teatro.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+      <!-- Don Juan Tenorio -->
+      <div class="show-card" onclick="openModal('donjuan')">
+        <div class="show-card-header"><h3>Don Juan Tenorio</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Original Version Spanish Theater · 2015</span>
+          <p>Clásico del Romanticismo español llevado a escena con esencia flamenca para la gira italiana. Temporada 2015–16.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+      <!-- Don Quijote de la Mancha -->
+      <div class="show-card" onclick="openModal('quijote')">
+        <div class="show-card-header"><h3>Don Quijote de la Mancha</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Original Version Spanish Theater · 2016</span>
+          <p>La obra cumbre de Cervantes recorre más de 30 escenarios italianos como única compañía española en lengua original.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+      <!-- El Espíritu de la Navidad -->
+      <div class="show-card" onclick="openModal('navidad')">
+        <div class="show-card-header"><h3>El Espíritu de la Navidad</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Familiar · Teatro Bus · 2016</span>
+          <p>Espectáculo navideño familiar para Teatro Bus Sevilla. Sofía y Martín buscan recuperar los valores de la Navidad con la ayuda de un duendecillo.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+      <!-- El Perro del Hortelano -->
+      <div class="show-card" onclick="openModal('perro')">
+        <div class="show-card-header"><h3>El Perro del Hortelano</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Original Version Spanish Theater · 2014</span>
+          <p>Lope de Vega adaptado a musical contemporáneo. Gira desde los Alpes a Sicilia en la temporada 2014–15.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+      <!-- Juan Ramón y Yo -->
+      <div class="show-card" onclick="openModal('juanramon')">
+        <div class="show-card-header"><h3>Juan Ramón y Yo</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Creación Contemporánea · 2016</span>
+          <p>Dramaturgia propia basada en el Diario de dos recién casados de Juan Ramón Jiménez y Zenobia Camprubí. Un viaje íntimo a través de sus diarios.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+      <!-- La Zapatera Prodigiosa -->
+      <div class="show-card" onclick="openModal('zapatera')">
+        <div class="show-card-header"><h3>La Zapatera Prodigiosa</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Original Version Spanish Theater · 2013</span>
+          <p>García Lorca en comedia musical flamenca. Primera producción internacional de la compañía, con residencia en el C.C. La Bóbila de L'Hospitalet.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== MICRO TEATRO ===== -->
+  <section id="microteatro">
+    <h2 class="section-title">Micro Teatro</h2>
+    <div class="show-grid">
+      <div class="show-card" onclick="openModal('perfil')">
+        <div class="show-card-header"><h3>Perfil</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Micro Teatro · 2014</span>
+          <p>En la era de las tecnologías, ¿quién se esconde tras el perfil? Un repaso de nuestra relación cotidiana con las redes sociales, de la mano de Carlota y Sofía.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FUNCIONES ===== -->
+  <section id="funciones">
+    <h2 class="section-title">Funciones</h2>
+
+    <!-- 2019 -->
+    <div class="year-block">
+      <h3 class="year-title">2019</h3>
+      <table class="funciones-table">
+        <thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>3 y 4 de Enero · 17:00 h.</td><td class="func-show">El Espíritu de la Navidad</td><td class="func-venue">Casala Teatro</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2018 -->
+    <div class="year-block">
+      <h3 class="year-title">2018</h3>
+      <table class="funciones-table">
+        <thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>16, 26, 27 y 28 de Diciembre · 17:00 h.</td><td class="func-show">El Espíritu de la Navidad</td><td class="func-venue">Casala Teatro</td></tr>
+          <tr><td>23 y 30 de Noviembre · 21:30 h.</td><td class="func-show">Macarena y Rocío</td><td class="func-venue">Casala Teatro</td></tr>
+          <tr><td>5 de Octubre (Noche en Blanco) · desde las 21:00 h.</td><td class="func-show">Macarena y Rocío</td><td class="func-venue">—</td></tr>
+          <tr><td>23 de Agosto · 22:00 h.</td><td class="func-show">Vamos a por CR7</td><td class="func-venue">Palacio Los Marqueses de La Algaba</td></tr>
+          <tr><td>7 de Junio · 21:30 h.</td><td class="func-show">Macarena y Rocío</td><td class="func-venue">The Nomad Hostel (terraza)</td></tr>
+          <tr><td>18 de Mayo · 21:30 h.</td><td class="func-show">Vamos a por CR7</td><td class="func-venue">La Oficina Producciones Culturales</td></tr>
+          <tr><td>19 de Mayo · 21:00 h.</td><td class="func-show">Vamos a por CR7</td><td class="func-venue">Territorio Teatro (Piscina Municipal de Vícar)</td></tr>
+          <tr><td>4 de Mayo · 22:30 h.</td><td class="func-show">Macarena y Rocío</td><td class="func-venue">Casala Teatro</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Gira Italia 2017-18 -->
+    <div class="gira-block">
+      <h3>Gira por Italia con <em>Bodas de Sangre</em></h3>
+      <p class="gira-season">Temporada teatral 2017–18</p>
+      <div class="gira-cities">
+        <span class="gira-city">Busto Arsizio (Milano) · estreno</span>
+        <span class="gira-city">Torino</span>
+        <span class="gira-city">Biella</span>
+        <span class="gira-city">Lecco</span>
+        <span class="gira-city">Bologna</span>
+        <span class="gira-city">Firenze</span>
+        <span class="gira-city">Aprilia</span>
+        <span class="gira-city">Rieti</span>
+        <span class="gira-city">Salerno</span>
+        <span class="gira-city">Ceccano</span>
+        <span class="gira-city">Roma</span>
+        <span class="gira-city">Napoli</span>
+        <span class="gira-city">Palermo</span>
+        <span class="gira-city">Barcellona Pozzo di Gotto</span>
+        <span class="gira-city">Siracusa</span>
+        <span class="gira-city">Catania</span>
+        <span class="gira-city">Reggio Calabria</span>
+        <span class="gira-city">Cosenza</span>
+        <span class="gira-city">Bari</span>
+        <span class="gira-city">Lecce</span>
+        <span class="gira-city">Taranto</span>
+        <span class="gira-city">Pescara</span>
+        <span class="gira-city">San Benedetto</span>
+        <span class="gira-city">Ancona</span>
+        <span class="gira-city">Pesaro</span>
+        <span class="gira-city">Modena</span>
+        <span class="gira-city">Milano</span>
+        <span class="gira-city">Padova</span>
+        <span class="gira-city">Mestre (Venecia)</span>
+        <span class="gira-city">Bergamo</span>
+        <span class="gira-city">Sacile</span>
+        <span class="gira-city">Genova</span>
+        <span class="gira-city">Treviso</span>
+        <span class="gira-city">Trento</span>
+        <span class="gira-city">Rimini</span>
+        <span class="gira-city">Piacenza</span>
+      </div>
+    </div>
+
+    <!-- 2017 -->
+    <div class="year-block">
+      <h3 class="year-title">2017</h3>
+      <table class="funciones-table">
+        <thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>1 de Diciembre · 21:30 h.</td><td class="func-show">Macarena y Rocío</td><td class="func-venue">Casala Teatro</td></tr>
+          <tr><td>27 de Octubre · 21:30 h.</td><td class="func-show">Vamos a por CR7</td><td class="func-venue">—</td></tr>
+          <tr><td>28 de Septiembre al 1 de Octubre · 20:30 h.</td><td class="func-show">Vamos a por CR7</td><td class="func-venue">Teatro La Fundición de Sevilla · <strong>ESTRENO</strong></td></tr>
+          <tr><td>31 de Marzo al 30 de Mayo · Sáb. y Dom. · 12:00 h.</td><td class="func-show">La Máquina del Tiempo</td><td class="func-venue">Teatro Bus Sevilla (salidas desde Plaza de Cuba)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2016 -->
+    <div class="year-block">
+      <h3 class="year-title">2016</h3>
+      <table class="funciones-table">
+        <thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>14 de Marzo · 20:00 h.</td><td class="func-show">Juan Ramón y Yo</td><td class="func-venue">Centro Documentación de las Artes Escénicas de Andalucía · Lectura dramatizada con música en directo</td></tr>
+          <tr><td>Del 3 al 27 de Noviembre</td><td class="func-show">La Reina de las Causas Imposibles</td><td class="func-venue">Microteatro Sevilla</td></tr>
+          <tr><td>Del 17 de Diciembre 2016 al 5 de Enero de 2017</td><td class="func-show">El Espíritu de la Navidad</td><td class="func-venue">Teatro Bus Sevilla</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Gira Italia 2015-16 -->
+    <div class="gira-block">
+      <h3>Gira por Italia con <em>Don Juan Tenorio</em></h3>
+      <p class="gira-season">Temporada 2015–16</p>
+      <div class="gira-cities">
+        <span class="gira-city">Busto Arsizio (Milano) · estreno</span>
+        <span class="gira-city">Torino</span>
+        <span class="gira-city">Biella</span>
+        <span class="gira-city">Bergamo</span>
+        <span class="gira-city">Verona</span>
+        <span class="gira-city">Mestre (Venecia)</span>
+        <span class="gira-city">Bassano di Grappa</span>
+        <span class="gira-city">Padova</span>
+        <span class="gira-city">Trento</span>
+        <span class="gira-city">Lecco</span>
+        <span class="gira-city">Bologna</span>
+        <span class="gira-city">Rimini</span>
+        <span class="gira-city">Piacenza</span>
+        <span class="gira-city">Pordenone</span>
+        <span class="gira-city">Treviso</span>
+        <span class="gira-city">Caserta</span>
+        <span class="gira-city">Brindisi</span>
+        <span class="gira-city">Ancona</span>
+        <span class="gira-city">San Benedetto</span>
+        <span class="gira-city">Pescara</span>
+        <span class="gira-city">Taranto</span>
+        <span class="gira-city">Lecce</span>
+        <span class="gira-city">Bari</span>
+        <span class="gira-city">Reggio Calabria</span>
+        <span class="gira-city">Catania</span>
+        <span class="gira-city">Palermo</span>
+        <span class="gira-city">Messina</span>
+        <span class="gira-city">Cosenza</span>
+        <span class="gira-city">Napoli</span>
+        <span class="gira-city">Salerno</span>
+        <span class="gira-city">Roma</span>
+        <span class="gira-city">Gaeta</span>
+        <span class="gira-city">Rieti</span>
+        <span class="gira-city">Genova</span>
+        <span class="gira-city">Milano</span>
+        <span class="gira-city">Firenze</span>
+        <span class="gira-city">Frosinone</span>
+        <span class="gira-city">Aprilia</span>
+        <span class="gira-city">Benevento</span>
+        <span class="gira-city">Ragusa</span>
+        <span class="gira-city">Alcamo</span>
+        <span class="gira-city">Siracusa</span>
+        <span class="gira-city">Catanzaro</span>
+      </div>
+    </div>
+
+    <!-- 2015 -->
+    <div class="year-block">
+      <h3 class="year-title">2015</h3>
+      <table class="funciones-table">
+        <thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>11 de Abril · 18:30 h.</td><td class="func-show">Perfil</td><td class="func-venue">Café Teva Barcelona · Passatge Ciutat de Mallorca 5</td></tr>
+          <tr><td>18 de Abril · 22:30 h.</td><td class="func-show">La Zapatera Prodigiosa</td><td class="func-venue">Teatro Nuevo Fernando Arrabal, Ciudad Rodrigo (Red Teatros Castilla y León)</td></tr>
+          <tr><td>24 y 25 de Abril</td><td class="func-show">El Consultorium</td><td class="func-venue">Càpsules de L'H · Fiestas de la Primavera, L'Hospitalet de Llobregat</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Gira Italia 2014-15 -->
+    <div class="gira-block">
+      <h3>Gira por Italia con <em>El Perro del Hortelano</em></h3>
+      <p class="gira-season">Temporada 2014–15</p>
+      <div class="gira-cities">
+        <span class="gira-city">Busto Arsizio (Milano) · estreno</span>
+        <span class="gira-city">Génova</span>
+        <span class="gira-city">Torino</span>
+        <span class="gira-city">Bergamo</span>
+        <span class="gira-city">Lecco</span>
+        <span class="gira-city">Biella</span>
+        <span class="gira-city">Piacenza</span>
+        <span class="gira-city">Bologna</span>
+        <span class="gira-city">Firenze (x2)</span>
+        <span class="gira-city">Caserta</span>
+        <span class="gira-city">Gaeta</span>
+        <span class="gira-city">Napoli</span>
+        <span class="gira-city">Roma</span>
+        <span class="gira-city">Salerno</span>
+        <span class="gira-city">Cosenza</span>
+        <span class="gira-city">Reggio Calabria</span>
+        <span class="gira-city">Messina</span>
+        <span class="gira-city">Palermo</span>
+        <span class="gira-city">Catania</span>
+        <span class="gira-city">Taranto</span>
+        <span class="gira-city">Lecce</span>
+        <span class="gira-city">Bari</span>
+        <span class="gira-city">Pescara</span>
+        <span class="gira-city">Rieti</span>
+        <span class="gira-city">Fano</span>
+        <span class="gira-city">Rimini</span>
+        <span class="gira-city">Ravenna</span>
+        <span class="gira-city">Padova</span>
+        <span class="gira-city">Treviso</span>
+        <span class="gira-city">Milano</span>
+        <span class="gira-city">Trento</span>
+        <span class="gira-city">Verona</span>
+        <span class="gira-city">Mestre</span>
+        <span class="gira-city">Pordenone</span>
+        <span class="gira-city">Bassano</span>
+        <span class="gira-city">Rovereto</span>
+        <span class="gira-city">Ancona</span>
+        <span class="gira-city">San Benedetto</span>
+        <span class="gira-city">Benevento</span>
+        <span class="gira-city">Portici</span>
+      </div>
+    </div>
+
+    <!-- 2014 -->
+    <div class="year-block">
+      <h3 class="year-title">2014</h3>
+      <table class="funciones-table">
+        <thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>6 de Abril · 19:00 h.</td><td class="func-show">La Zapatera Prodigiosa</td><td class="func-venue">Teatre El Musical de Valencia</td></tr>
+          <tr><td>12, 25, 26 y 27 de Abril</td><td class="func-show">Perfil</td><td class="func-venue">—</td></tr>
+          <tr><td>11 de Octubre</td><td class="func-show">Perfil</td><td class="func-venue">L'Hospitalet de Llobregat</td></tr>
+          <tr><td>16–25 de Octubre</td><td class="func-show">Perfil</td><td class="func-venue">Microcultura Barcelona</td></tr>
+          <tr><td>Noviembre</td><td class="func-show">Don Quijote de la Mancha</td><td class="func-venue">—</td></tr>
+          <tr><td>Noviembre</td><td class="func-show">La Zapatera Prodigiosa</td><td class="func-venue">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Gira Italia 2013-14 -->
+    <div class="gira-block">
+      <h3>Gira por Italia con <em>La Zapatera Prodigiosa</em></h3>
+      <p class="gira-season">Temporada 2013–14 · Primera gira internacional</p>
+      <div class="gira-cities">
+        <span class="gira-city">Busto Arsizio (Milano) · estreno</span>
+        <span class="gira-city">+35 ciudades italianas</span>
+      </div>
+    </div>
+
+    <!-- 2012-2011 -->
+    <div class="year-block">
+      <h3 class="year-title">2011–2012</h3>
+      <table class="funciones-table">
+        <thead><tr><th>Fecha</th><th>Espectáculo</th><th>Lugar</th></tr></thead>
+        <tbody>
+          <tr><td>Junio 2011 · ESTRENO</td><td class="func-show">Adelante</td><td class="func-venue">Teatre del C.C. Collblanc-Torrassa, L'Hospitalet de Llobregat</td></tr>
+          <tr><td>Junio 2011</td><td class="func-show">Adelante</td><td class="func-venue">Teatre Joventut, L'Hospitalet de Llobregat</td></tr>
+          <tr><td>Febrero 2012</td><td class="func-show">Adelante</td><td class="func-venue">Canal Sant Boi</td></tr>
+          <tr><td>Junio 2012</td><td class="func-show">Adelante</td><td class="func-venue">Sala Porta 4</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- ===== DIFUSIÓN ===== -->
+  <section id="difusion">
+    <h2 class="section-title">Difusión</h2>
+    <ul class="difusion-list">
+      <li class="difusion-item">
+        <span class="difusion-date">Ene 2018</span>
+        <div><p class="difusion-title">Lorca recorre Italia con Frotalámparas</p><p class="difusion-source">El Bombín de Lautrec</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Oct 2017</span>
+        <div><p class="difusion-title"><em>Vamos a por CR7</em>, y el genio del teatro salió al encuentro</p><p class="difusion-source">8pistas</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Oct 2017</span>
+        <div><p class="difusion-title"><em>Vamos a por CR7</em>, cuando los sueños entran en juego</p><p class="difusion-source">El Bombín de Lautrec</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Abr 2017</span>
+        <div><p class="difusion-title"><em>La Máquina del Tiempo</em>, un viaje por la historia de Sevilla</p><p class="difusion-source">Diario de Sevilla</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Abr 2017</span>
+        <div><p class="difusion-title">Entrevista a Óscar Salamanca sobre La Máquina del Tiempo</p><p class="difusion-source">Es Radio Sevilla</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Dic 2016</span>
+        <div><p class="difusion-title">El Espíritu de la Navidad en Teatro Bus Sevilla</p><p class="difusion-source">Diario de Sevilla</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Nov 2016</span>
+        <div><p class="difusion-title"><em>La Reina de las Causas Imposibles</em> en Microteatro Sevilla</p><p class="difusion-source">Canal Sur Noticias</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Abr 2015</span>
+        <div><p class="difusion-title">«<em>La Zapatera Prodigiosa</em>, atrae mucho público al Teatro Nuevo»</p><p class="difusion-source">Ciudad Rodrigo.net</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Abr 2014</span>
+        <div><p class="difusion-title">Frotalámparas «referente de exportación de cultura española»</p><p class="difusion-source">Valencia Plaza (portada)</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Mar 2014</span>
+        <div><p class="difusion-title">Nota de prensa sobre <em>La Zapatera Prodigiosa</em> antes de su llegada al Teatre El Musical de Valencia</p><p class="difusion-source">Valenciablog Arte y Cultura</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Feb 2014</span>
+        <div><p class="difusion-title">El networking de las artes escénicas creado por Frotalámparas</p><p class="difusion-source">L'H Televisió</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Feb 2014</span>
+        <div><p class="difusion-title">Connecting Artists, la nueva iniciativa de la compañía</p><p class="difusion-source">El Far (L'Hospitalet)</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Nov 2013</span>
+        <div><p class="difusion-title">Reportaje televisivo «Qui som? Què fem?»</p><p class="difusion-source">Televisió de L'H</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Oct 2013</span>
+        <div><p class="difusion-title">Noticia cultural sobre la compañía</p><p class="difusion-source">L'H Digital</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Nov 2013</span>
+        <div><p class="difusion-title">La Companyia teatral Frotalamparas prepara una nova gira per Itàlia</p><p class="difusion-source">—</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Jun 2012</span>
+        <div><p class="difusion-title">Entrevista a la Compañía tras una función en la Sala Porta 4</p><p class="difusion-source">Indienauta.com (Gina Tosas)</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Jun 2012</span>
+        <div><p class="difusion-title">Nota informativa sobre <em>Adelante</em> en su paso por la Sala Porta 4</p><p class="difusion-source">Indienauta.com</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Feb 2012</span>
+        <div><p class="difusion-title">Entrevista a la directora Marta González</p><p class="difusion-source">Canal Sant Boi</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Feb 2012</span>
+        <div><p class="difusion-title">Nota informativa sobre <em>Adelante</em> en su paso por Sant Boi</p><p class="difusion-source">Sant Boi Notícies</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Feb 2012</span>
+        <div><p class="difusion-title">Un pas endavant contra la violència de gènere</p><p class="difusion-source">Canal Sant Boi</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Abr 2011</span>
+        <div><p class="difusion-title">Píldoras de Igualdad de la Fundación Agareso — Teatro Contra la Violencia de Género</p><p class="difusion-source">—</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Jun 2011</span>
+        <div><p class="difusion-title">Primera entrevista en el programa El Carrer del Julivern — Presentación de la Compañía</p><p class="difusion-source">Radio Ciutat Vella, 100.5 FM</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Jun 2011</span>
+        <div><p class="difusion-title">Entrevista y grabación del estreno de <em>Adelante</em></p><p class="difusion-source">Televisión L'H al Día (Informativos)</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Jun 2011</span>
+        <div><p class="difusion-title">Segunda entrevista con el elenco — El Carrer del Julivern</p><p class="difusion-source">Radio Ciutat Vella, 100.5 FM (Eduardo Reynalds)</p></div>
+      </li>
+      <li class="difusion-item">
+        <span class="difusion-date">Jun 2011</span>
+        <div><p class="difusion-title">Entrevista a Marta González en <em>Tots els matins</em></p><p class="difusion-source">DigitaL'H (radio y televisión)</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== CONNECTING ARTISTS ===== -->
+  <section id="connecting">
+    <h2 class="section-title">Connecting Artists</h2>
+    <div class="ca-box">
+      <div class="prose">
+        <p><strong>Connecting Artists</strong> propone el primer encuentro entre artistas escénicos para exponer sus proyectos y necesidades ante un diverso colectivo de artistas relacionados con el medio escénico, para conectar y colaborar juntos, favoreciendo la creación y el desarrollo de ideas y proyectos.</p>
+        <p>El artista, como creador nato, tiene el constante impulso de crear y mostrarse ante la sociedad, contribuyendo en el desarrollo de la misma, y en momentos como los actuales es importante unir trabajos, apoyar nuevos proyectos y crear una red de sinergia colectiva que ayude al mantenimiento de la cultura.</p>
+        <p>Este tipo de encuentros, realizados una vez al trimestre en Barcelona y Sevilla, están dirigidos a todos los artistas y creadores relacionados con las artes escénicas: dramaturgos, directores, escenógrafos, actores, bailarines, técnicos, maquilladores, figurinistas, distribuidores, gestores culturales, responsables de comunicación, músicos, productores… que quieran presentar una propuesta de creación en la que necesiten de otros artistas, que quieran conocer el hervidero de creación actual y/o ofrecer sus servicios para propiciar el funcionamiento de una red escénica de trabajo.</p>
+        <p><strong>Una iniciativa de Frotalámparas.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto">
+    <h2 class="section-title">Contacto</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <h3>Dirección</h3>
+        <p>C/ Benidorm 8<br>41001 — Sevilla</p>
+      </div>
+      <div class="contact-item">
+        <h3>Teléfono</h3>
+        <p>(+34) 658 38 68 17</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2014–2019 <strong>Cía. Teatro Frotalámparas</strong> · Todos los derechos reservados</p>
+  <p style="margin-top:6px;font-size:0.75rem;">Diseño gráfico &amp; web original: Carlos Manfredi · Archivo estático generado en 2026</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#inicio" id="back-top" title="Volver arriba">↑</a>
+
+<!-- ===== MODALES DE ESPECTÁCULOS ===== -->
+
+<!-- CR7 -->
+<div id="modal-cr7" class="modal-overlay" onclick="closeModalOutside(event, 'cr7')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('cr7')">×</button>
+      <h2>Vamos a por CR7</h2>
+      <p class="tag">Creación Contemporánea · Estreno: 28 de Septiembre de 2017 · La Fundición de Sevilla</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p>Cuatro trabajadores de una inmobiliaria deciden secuestrar a un futbolista famoso, para así poder desestabilizar a su equipo y conseguir una apuesta millonaria. Hacer una apuesta imposible es el último intento desesperado de dar un giro a su destino, aunque todo lo planeado, fracasa. En este fracaso encuentran un pequeño lugar para desahogarse y confesar sus miserias.</p>
+          <p><em>Vamos a por CR7</em> es una reposición del texto <em>Vamos a por Guti</em>, del dramaturgo Albert Boronat, cuyo espectáculo fue premiado con el Scena Simulacro 2012.</p>
+          <p>Una obra divertida y cercana en la que la mayoría de los espectadores se verán reflejados en los personajes. Seres de carne y hueso. Gente con largas jornadas de trabajo, estrés, preocupaciones familiares, económicas y que en una noche de distensión con los amigos se verán arrastrados por sus propios deseos. Y todo ello con el humor, como llave universal que abre las puertas de la inteligencia.</p>
+          <p>Una puesta en escena contemporánea y multidisciplinar, donde la danza y la música se entremezclan con el guión para crear una atmósfera tan absurda y real como la vida misma.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia</span><span class="ficha-value">Albert Boronat</span></div>
+          <div class="ficha-row"><span class="ficha-label">Revisión y Dirección</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Coreografía</span><span class="ficha-value">Laura Morales</span></div>
+          <div class="ficha-row"><span class="ficha-label">Banda Sonora</span><span class="ficha-value">Alberto Almenara</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco</span><span class="ficha-value">Óscar Salamanca, Alejandro Lorence, Fran Contreras, Jorge Luque, Clarisa Guerra, Ezequiel Barranco</span></div>
+          <div class="ficha-row"><span class="ficha-label">Iluminación y Sonido</span><span class="ficha-value">Macarena Márquez</span></div>
+          <div class="ficha-row"><span class="ficha-label">Producción</span><span class="ficha-value">Frotalámparas</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeo</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/eBy5LP7_aTY" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Vídeo Promo — Vamos a por CR7</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADELANTE -->
+<div id="modal-adelante" class="modal-overlay" onclick="closeModalOutside(event, 'adelante')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('adelante')">×</button>
+      <h2>Adelante</h2>
+      <p class="tag">Creación Contemporánea · Estreno: Junio 2011 · L'Hospitalet de Llobregat</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p><em><strong>Adelante</strong></em> es nuestro paso profesional contra la violencia de género. Queremos detectarla, prevenirla y erradicarla. Reconocerla desde los primeros momentos para poder cambiar el rumbo de nuestras vidas, eligiendo un camino de esperanza e ilusiones cumplidas. Es un paso al frente, con valor y autoestima para que podamos vivir en plena armonía con los que nos rodean y con nosotros mismos.</p>
+          <p><em>Adelante</em> trata de la vida de diversas mujeres que se entremezclan entre sí, conviviendo, sin saberlo, en tiempo y espacio, sorprendiéndonos al mostrar que no todo lo que se es en apariencia es lo que es realmente.</p>
+          <p><em>Adelante</em> es una ventana abierta a la vida cotidiana de los personajes en la que el espectador se asoma a una realidad que salpica nuestra más contemporánea sociedad.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia y Dirección</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco</span><span class="ficha-value">Óscar Salamanca, Marta Escurín, Arántzazu Ruiz, Ana Conde, Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Luces y Sonido</span><span class="ficha-value">Ricardo Román</span></div>
+          <div class="ficha-row"><span class="ficha-label">Banda Sonora</span><span class="ficha-value">Tannhäuser</span></div>
+          <div class="ficha-row"><span class="ficha-label">Vídeo y Montaje</span><span class="ficha-value">Raul Amor</span></div>
+          <div class="ficha-row"><span class="ficha-label">Fotografía</span><span class="ficha-value">Manuel Babiano</span></div>
+          <div class="ficha-row"><span class="ficha-label">Cartelería</span><span class="ficha-value">Massimiliano Maddalena</span></div>
+          <div class="ficha-row"><span class="ficha-label">Diseño Gráfico</span><span class="ficha-value">Carlos Manfredi</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeo</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/rteBo5RsbxA" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Trailer — Adelante</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LA MÁQUINA DEL TIEMPO -->
+<div id="modal-maquina" class="modal-overlay" onclick="closeModalOutside(event, 'maquina')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('maquina')">×</button>
+      <h2>La Máquina del Tiempo</h2>
+      <p class="tag">Espectáculo Familiar · Teatro Bus Sevilla · 2017</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p><em><strong>La Máquina del Tiempo</strong></em> es el espectáculo familiar diseñado a medida para Teatro Bus Sevilla, un autobús convertido en teatro que circula por la ciudad. Es un nuevo concepto, original y atractivo para disfrutar del teatro y de la cultura más allá de los espacios convencionales.</p>
+          <p>Don Manuel Marín Mármol, o más conocido como el profesor Marmolín, ha creado un artilugio para viajar en el tiempo. En su primera visita atemporal, pretende viajar al pasado, pero un error le lleva al futuro, apareciendo en 2017, donde la ayuda de los espectadores será fundamental.</p>
+          <p><em>La Máquina del Tiempo</em> es una aventura única para disfrutar en familia conociendo la historia de Sevilla. A través del teatro y de la ficción, realizaremos un viaje iniciático para los más pequeños, y de interés para los mayores, en el que conoceremos la historia de varias de las civilizaciones más importantes asentadas en Sevilla.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco</span><span class="ficha-value">Óscar Salamanca, Pepa Solís</span></div>
+          <div class="ficha-row"><span class="ficha-label">Producción</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Distribución</span><span class="ficha-value">Teatro Bus Sevilla</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DON JUAN TENORIO -->
+<div id="modal-donjuan" class="modal-overlay" onclick="closeModalOutside(event, 'donjuan')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('donjuan')">×</button>
+      <h2>Don Juan Tenorio</h2>
+      <p class="tag">Original Version Spanish Theater · Gira Italia Temporada 2015–16</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p>Cuando cada año nos encontramos ante una nueva producción para ser distribuida por Italia, una infinitud de posibilidades se despliegan ante nosotros. La responsabilidad no es producir un espectáculo cualquiera para el gusto y disfrute del público, sino conseguir renovar los textos propuestos y ser capaz de enfocarlos desde una visión italiana sobre la cultura española.</p>
+          <p>En esta nueva temporada, <em>Don Juan Tenorio</em> quiere lucir su capa y espada ambientada en el Siglo de Oro y escrita con todos los ingredientes del Romanticismo, a toque de compás flamenco, para transmitir su drama y pasión con esencia Spanish.</p>
+          <p>El espectador habrá de abrir su mente, y también su corazón, para permitir que las palabras agudas, el estoque preciso y la mirada conquistadora de su protagonista le traslade a un mundo donde la verdad de uno mismo y el espíritu indomable son capaces de arrasar con todo obstáculo o persona, para conseguir el amor puro que salvará el alma de don Juan Tenorio.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dirección de Producción y Escena</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco</span><span class="ficha-value">Óscar Salamanca, Marta Escurín, Estrella Alonso, Josep Gamez, Inés Robertie, Adrián Ardila</span></div>
+          <div class="ficha-row"><span class="ficha-label">Compositor</span><span class="ficha-value">José Miguel Galera</span></div>
+          <div class="ficha-row"><span class="ficha-label">Ambientación musical</span><span class="ficha-value">Daniel Peña</span></div>
+          <div class="ficha-row"><span class="ficha-label">Diseño Vestuario</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Residencia artística</span><span class="ficha-value">C.C. La Bóbila</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeos</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/9-pQFZrTEM8" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Trailer — Don Juan Tenorio</p>
+          </div>
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/HqzmwW6tgng" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Vídeo book — Don Juan Tenorio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DON QUIJOTE -->
+<div id="modal-quijote" class="modal-overlay" onclick="closeModalOutside(event, 'quijote')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('quijote')">×</button>
+      <h2>Don Quijote de la Mancha</h2>
+      <p class="tag">Original Version Spanish Theater · Gira Italia Temporada 2016–17</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p><em><strong>En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astilleros, adarga antigua, rocín flaco y galgo corredor.</strong></em></p>
+          <p>En 1605 cuando Miguel de Cervantes Saavedra publica <em>El ingenioso hidalgo don Quijote de la Mancha</em>, la primera parte de lo que llegará a ser su pieza cumbre, no fue consciente de que su obra revolucionaría la literatura española y universal, considerándose ésta como la madre de la novela moderna y un referente literario para todos los tiempos y culturas.</p>
+          <p>Ahora, por segundo año consecutivo, nos ofrecen la apasionante labor de recorrer más de 30 escenarios italianos como única compañía española que representa en lengua original en Italia.</p>
+          <p>¿Qué es realidad, y qué no? El ser humano libre bajo un concepto de justicia, ¿ideal o no? No seremos nosotros quien lo descubramos, sino el intelecto y la mirada de cada lector, de cada espectador, que se embarque en la travesía de Don Quijote.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dirección Producción</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Dirección Artística</span><span class="ficha-value">Sandra Amade</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco</span><span class="ficha-value">Óscar Salamanca, Ernesto Hernández, Marta González, Sergio Arróspide, Eloy Moreno</span></div>
+          <div class="ficha-row"><span class="ficha-label">Asesoramiento Musical</span><span class="ficha-value">Daniel Peña</span></div>
+          <div class="ficha-row"><span class="ficha-label">Diseño Vestuario</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Confección Vestuario</span><span class="ficha-value">Beatriz Leflet</span></div>
+          <div class="ficha-row"><span class="ficha-label">Residencia artística</span><span class="ficha-value">C.C. La Bóbila</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeos</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/IDF9XO_PbqM" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Trailer — Don Quijote de la Mancha</p>
+          </div>
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/vaOw0GipWtY" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Book fotográfico — Don Quijote de la Mancha</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EL ESPÍRITU DE LA NAVIDAD -->
+<div id="modal-navidad" class="modal-overlay" onclick="closeModalOutside(event, 'navidad')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('navidad')">×</button>
+      <h2>El Espíritu de la Navidad</h2>
+      <p class="tag">Espectáculo Familiar · Teatro Bus Sevilla · 2016–2019</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p><em><strong>El Espíritu de la Navidad</strong></em> es un espectáculo familiar diseñado a medida para Teatro Bus Sevilla, un autobús convertido en teatro que circula por la ciudad. Es un nuevo concepto, original y atractivo para disfrutar del teatro y de la cultura más allá de los espacios convencionales.</p>
+          <p>Dirigido a todos los públicos, cuenta la historia de Sofía y Martín. Dos hermanos que, sorprendidos por la noticia de que El Espíritu de la Navidad se ha puesto en huelga porque está cansado del comportamiento de la sociedad durante estas fechas, reciben la visita de un duendecillo navideño que conoce de la existencia de un mapa, el cual les llevará junto a varios personajes de la ciudad que les indicarán pistas, con las que poder recuperar los valores necesarios para que el Espíritu de la Navidad encienda las luces de la ilusión.</p>
+          <p>Con este espectáculo se pretende apoyar los valores de las fechas navideñas: la ilusión, la esperanza, la solidaridad, la amistad, la convivencia social y familiar, el compartir… más allá de lo meramente consumista y materialista.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco</span><span class="ficha-value">Óscar Salamanca, Pepa Solís</span></div>
+          <div class="ficha-row"><span class="ficha-label">Producción</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Distribución</span><span class="ficha-value">Teatro Bus Sevilla</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeo</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/70RFAlxz2xo" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Book — El Espíritu de la Navidad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EL PERRO DEL HORTELANO -->
+<div id="modal-perro" class="modal-overlay" onclick="closeModalOutside(event, 'perro')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('perro')">×</button>
+      <h2>El Perro del Hortelano</h2>
+      <p class="tag">Original Version Spanish Theater · Gira Italia Temporada 2014–15</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p>Ya va siendo habitual en Frotalámparas recibir cada temporada la grata labor de acercar el legado artístico de nuestra cultura a la población italiana, especialmente a las nuevas generaciones, asumiendo así la gran satisfacción de poder realizar gira desde los Alpes a Sicilia.</p>
+          <p>En esta ocasión, <em><strong>El Perro del Hortelano</strong></em>, una de las piezas más importantes del gran Lope de Vega, ha sido la elegida para transformar sus ricos versos en prosa versada y para adaptarse a ritmo de musical, que amenice y favorezca la revisión contemporánea de la puesta en escena.</p>
+          <p>El Amor es poderoso y es capaz de superar barreras sociales, que sólo el hombre ingenioso y osado podrá conseguir. Para ello hará falta una pizca de humor, no despreciar la buena fortuna, y jugar a los naipes con el propio destino, en un intento de dotar de plena libertad al ser humano, que con un corazón, sin reglas ni clases sociales, se enamora.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dirección Producción y Escena</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Coach vocal</span><span class="ficha-value">Sandra Amade</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco</span><span class="ficha-value">Óscar Salamanca, Judith Puig, Samuel Miñarro, María Colom</span></div>
+          <div class="ficha-row"><span class="ficha-label">Arreglos musicales</span><span class="ficha-value">Daniel Peña</span></div>
+          <div class="ficha-row"><span class="ficha-label">Diseño Vestuario</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Colaboración Vestuario</span><span class="ficha-value">Daniela Córdoba, Jorge Maya</span></div>
+          <div class="ficha-row"><span class="ficha-label">Residencia artística</span><span class="ficha-value">C.C. La Bóbila</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeos</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/2pdfN9Htg4s" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Trailer — El Perro del Hortelano</p>
+          </div>
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/Tw8JxBHLF3I" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Vídeo álbum — El Perro del Hortelano</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JUAN RAMÓN Y YO -->
+<div id="modal-juanramon" class="modal-overlay" onclick="closeModalOutside(event, 'juanramon')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('juanramon')">×</button>
+      <h2>Juan Ramón y Yo</h2>
+      <p class="tag">Creación Contemporánea · Lectura Dramatizada · 2016</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p><em><strong>Juan Ramón y Yo</strong></em>, el espectáculo de dramaturgia propia, basado en el libro <em>Diario de dos recién casados</em>, de Juan Ramón Jiménez y Zenobia Camprubí, editado por primera vez en 2012 por la Universidad de Huelva.</p>
+          <p>Juan Ramón y Zenobia se hallan en una habitación de uno de los varios hoteles donde se alojaron durante su luna de miel en los Estados Unidos, desde el 2 de Marzo de 2016, día de su boda, hasta el 7 de Junio del mismo año, fecha en la que regresan a España como recién casados.</p>
+          <p>100 años después de su matrimonio, formaremos parte de la atmósfera que respiraban Juan Ramón y Zenobia, los sueños que destilaban, los deseos que anhelaban y los pasos que caminaban por una América que aún desconocía el cobijo al que el exilio español les obligaría.</p>
+          <p><strong>Un viaje íntimo a través de sus diarios. Un encuentro en primera persona con el poeta y Zenobia Camprubí, más allá de "Platero".</strong></p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco (Lectura Dramatizada)</span><span class="ficha-value">Marta González, José Luis Fernández, Óscar Salamanca</span></div>
+          <div class="ficha-row"><span class="ficha-label">Música en directo</span><span class="ficha-value">Roberto Barroso</span></div>
+          <div class="ficha-row"><span class="ficha-label">Producción</span><span class="ficha-value">Frotalámparas</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeo</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/Ia3UsyTgSVY" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Teaser lectura dramatizada — Juan Ramón y Yo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LA ZAPATERA PRODIGIOSA -->
+<div id="modal-zapatera" class="modal-overlay" onclick="closeModalOutside(event, 'zapatera')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('zapatera')">×</button>
+      <h2>La Zapatera Prodigiosa</h2>
+      <p class="tag">Original Version Spanish Theater · Primera producción internacional · 2013</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p><em><strong>La Zapatera Prodigiosa</strong></em> de Federico García Lorca, fue estrenada en 1930 bajo la descripción farsa violenta en dos actos. Una farsa en la que contrapone, por un lado, unos personajes que viven, en la mayoría de los casos, de cara al qué dirán los demás, y por otro, a la zapatera que intenta vivir libre bajo sus emociones, pero firme a sus compromisos adquiridos.</p>
+          <p>Al mismo tiempo, el zapatero muestra una versión noble, paciente y comprensiva del hombre, en contraposición del ser dominante dentro de un matrimonio. Finalmente, en la distancia del matrimonio, ambos maduran, reflexionan y profundizan en su propia personalidad y deseos, llegando a un nuevo punto de encuentro en el que amarse y vivir en sintonía.</p>
+          <p>Una adaptación en comedia musical flamenca que traspasa las fronteras geográficas y temporales que nos distan del contexto original, transportando sus enseñanzas y valores a nuestra contemporaneidad.</p>
+          <p>Residencia artística concedida por el Centro Cultural La Bóbila de L'Hospitalet de Llobregat. Co-Producción italiana (Busto Arsizio, Milán).</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dirección</span><span class="ficha-value">Carlos Gramaje</span></div>
+          <div class="ficha-row"><span class="ficha-label">Coreografías</span><span class="ficha-value">Elena de la Viña</span></div>
+          <div class="ficha-row"><span class="ficha-label">Elenco</span><span class="ficha-value">Marta González, Marta Escurín, Óscar Salamanca, Isaac Forteza, Nico Higueras</span></div>
+          <div class="ficha-row"><span class="ficha-label">Banda Sonora</span><span class="ficha-value">Jose Miguel Galera</span></div>
+          <div class="ficha-row"><span class="ficha-label">Fotografía</span><span class="ficha-value">Manuel Babiano</span></div>
+          <div class="ficha-row"><span class="ficha-label">Diseño Vestuario</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Confección Vestuario</span><span class="ficha-value">Beatriz Leflet, Daniela Córdoba</span></div>
+          <div class="ficha-row"><span class="ficha-label">Diseño web</span><span class="ficha-value">Carlos Manfredi</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeos</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/HF-MauDagoI" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Trailer — La Zapatera Prodigiosa</p>
+          </div>
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/rQPYS3-Dfdg" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Álbum fotográfico — La Zapatera Prodigiosa</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERFIL (MICRO TEATRO) -->
+<div id="modal-perfil" class="modal-overlay" onclick="closeModalOutside(event, 'perfil')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('perfil')">×</button>
+      <h2>Perfil</h2>
+      <p class="tag">Micro Teatro · Comedia · 2014</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p>En la era de las tecnologías, nuestras personalidades están aireadas cibernéticamente, pero ¿quién se esconde tras el perfil? ¿El laboral, el personal, el del grupo de cocina, el sentimental, el de los amigos del colegio, el de la familia, el de los romances de verano…???</p>
+          <p>Un repaso de nuestra relación cotidiana con las múltiples redes sociales, de la mano de Carlota y Sofía, dos amigas treintañeras, que fácilmente podrían formar parte de tu grupo de amistades.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia y Dirección</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Interpretación</span><span class="ficha-value">Marta González, Arántzazu Ruiz</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // Modales
+  function openModal(id) {
+    const el = document.getElementById('modal-' + id);
+    if (el) {
+      el.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeModal(id) {
+    const el = document.getElementById('modal-' + id);
+    if (el) {
+      el.classList.remove('open');
+      document.body.style.overflow = '';
+      // Pausar vídeos al cerrar
+      el.querySelectorAll('iframe').forEach(f => {
+        f.src = f.src;
+      });
+    }
+  }
+
+  function closeModalOutside(e, id) {
+    if (e.target === e.currentTarget) closeModal(id);
+  }
+
+  // Cerrar con Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(el => {
+        const id = el.id.replace('modal-', '');
+        closeModal(id);
+      });
+    }
+  });
+
+  // Back to top
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Nav activa según scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+
+</body>
+</html>
