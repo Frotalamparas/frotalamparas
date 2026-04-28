@@ -499,6 +499,8 @@
     }
 
     .difusion-title { font-weight: 700; margin-bottom: 2px; }
+    .difusion-title a { color: var(--orange); text-decoration: none; }
+    .difusion-title a:hover { text-decoration: underline; }
     .difusion-source { font-size: 0.82rem; color: var(--text-lt); font-style: italic; }
 
     /* ===== CONNECTING ARTISTS ===== */
@@ -736,7 +738,24 @@
           <span class="btn-show">Ver ficha</span>
         </div>
       </div>
-
+      <!-- Bodas de Sangre -->
+      <div class="show-card" onclick="openModal('bodas')">
+        <div class="show-card-header"><h3>Bodas de Sangre</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Original Version Spanish Theater · Gira Italia 2017-2018</span>
+          <p>Federico García Lorca. Adaptación y dirección de Marta González. Gira por más de 70 ciudades italianas en la temporada 2017-2018.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+      <!-- La Zapatera Prodigiosa Gira Italia 2018-19 -->
+      <div class="show-card" onclick="openModal('zapatera2019')">
+        <div class="show-card-header"><h3>La Zapatera Prodigiosa <small style="font-size:0.75em;font-weight:400">(Gira Italia 2018-19)</small></h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Original Version Spanish Theater · Gira Italia 2018-2019</span>
+          <p>Federico García Lorca. Adaptación y dirección de Marta González. Nueva producción que recorrió más de 70 ciudades italianas en la temporada 2018-2019.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -749,6 +768,30 @@
         <div class="show-card-body">
           <span class="show-card-tag">Micro Teatro · 2014</span>
           <p>En la era de las tecnologías, ¿quién se esconde tras el perfil? Un repaso de nuestra relación cotidiana con las redes sociales, de la mano de Carlota y Sofía.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+      <div class="show-card" onclick="openModal('consultorium')">
+        <div class="show-card-header"><h3>El Consultorium</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Micro Teatro · 2015</span>
+          <p>El que lo puede todo, no puede más. Una comedia agnóstica sobre lo divino. Proyecto encargado para Las Càpsules 2015 del Ajuntament de L'Hospitalet.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+      <div class="show-card" onclick="openModal('macarena')">
+        <div class="show-card-header"><h3>Macarena y Rocío</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Micro Teatro · 2015-2016</span>
+          <p>Sevilla. Un altar. Dos vírgenes trasnochadas dispuestas a romper con 100 años de pasado. Una de las microcomedias más taquilleras de Microteatro Sevilla.</p>
+          <span class="btn-show">Ver ficha</span>
+        </div>
+      </div>
+      <div class="show-card" onclick="openModal('reina')">
+        <div class="show-card-header"><h3>La Reina de las Causas Imposibles</h3></div>
+        <div class="show-card-body">
+          <span class="show-card-tag">Micro Teatro · 2016</span>
+          <p>Alicia es la reina de las causas imposibles. Una micro drami-comedia embarazosa que sorprenderá por sus constantes giros.</p>
           <span class="btn-show">Ver ficha</span>
         </div>
       </div>
@@ -1016,30 +1059,31 @@
   <!-- ===== DIFUSIÓN ===== -->
   <section id="difusion">
     <h2 class="section-title">Difusión</h2>
+    <p style="margin-bottom:1.5rem;color:var(--text-lt);font-size:0.9rem;">Cobertura en prensa, radio y televisión 2011–2018. Los enlaces abren el artículo original en una nueva pestaña.</p>
     <ul class="difusion-list">
       <li class="difusion-item">
         <span class="difusion-date">Ene 2018</span>
-        <div><p class="difusion-title">Lorca recorre Italia con Frotalámparas</p><p class="difusion-source">El Bombín de Lautrec</p></div>
+        <div><p class="difusion-title"><a href="https://www.elbombindelautrec.com" target="_blank" rel="noopener">Lorca recorre Italia con Frotalámparas</a></p><p class="difusion-source">El Bombín de Lautrec</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Oct 2017</span>
-        <div><p class="difusion-title"><em>Vamos a por CR7</em>, y el genio del teatro salió al encuentro</p><p class="difusion-source">8pistas</p></div>
+        <div><p class="difusion-title"><a href="http://8pistas.com/frotalamparas-la-fundicion-genio-del-teatro-salio-al-encuentro/" target="_blank" rel="noopener"><em>Vamos a por CR7</em>, y el genio del teatro salió al encuentro</a></p><p class="difusion-source">8pistas</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Oct 2017</span>
-        <div><p class="difusion-title"><em>Vamos a por CR7</em>, cuando los sueños entran en juego</p><p class="difusion-source">El Bombín de Lautrec</p></div>
+        <div><p class="difusion-title"><a href="https://www.elbombindelautrec.com/l/resena-vamos-a-por-cr7/" target="_blank" rel="noopener"><em>Vamos a por CR7</em>, cuando los sueños entran en juego</a></p><p class="difusion-source">El Bombín de Lautrec</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Abr 2017</span>
-        <div><p class="difusion-title"><em>La Máquina del Tiempo</em>, un viaje por la historia de Sevilla</p><p class="difusion-source">Diario de Sevilla</p></div>
+        <div><p class="difusion-title"><a href="http://www.diariodesevilla.es/vivirensevilla/Viaje-autobus-traves-BhistoriaB-ciudad_0_1124888190.html" target="_blank" rel="noopener"><em>La Máquina del Tiempo</em>, un viaje por la historia de Sevilla</a></p><p class="difusion-source">Diario de Sevilla</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Abr 2017</span>
-        <div><p class="difusion-title">Entrevista a Óscar Salamanca sobre La Máquina del Tiempo</p><p class="difusion-source">Es Radio Sevilla</p></div>
+        <div><p class="difusion-title"><a href="http://oscarsalamancalopez.blogspot.com" target="_blank" rel="noopener">Entrevista a Óscar Salamanca sobre La Máquina del Tiempo</a></p><p class="difusion-source">Es Radio Sevilla (audio)</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Dic 2016</span>
-        <div><p class="difusion-title">El Espíritu de la Navidad en Teatro Bus Sevilla</p><p class="difusion-source">Diario de Sevilla</p></div>
+        <div><p class="difusion-title"><a href="http://www.diariodesevilla.es/vivirensevilla/viaje-recuperar-BEspiritu-Bde-Navidad_0_1093391175.html" target="_blank" rel="noopener">El Espíritu de la Navidad en Teatro Bus Sevilla</a></p><p class="difusion-source">Diario de Sevilla</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Nov 2016</span>
@@ -1047,23 +1091,23 @@
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Abr 2015</span>
-        <div><p class="difusion-title">«<em>La Zapatera Prodigiosa</em>, atrae mucho público al Teatro Nuevo»</p><p class="difusion-source">Ciudad Rodrigo.net</p></div>
+        <div><p class="difusion-title"><a href="http://www.ciudadrodrigo.net/2015/04/18/la-zapatera-prodigiosa-atrae-a-mucho-publico-en-el-teatro-nuevo/" target="_blank" rel="noopener">«<em>La Zapatera Prodigiosa</em>, atrae mucho público al Teatro Nuevo»</a></p><p class="difusion-source">Ciudad Rodrigo.net</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Abr 2014</span>
-        <div><p class="difusion-title">Frotalámparas «referente de exportación de cultura española»</p><p class="difusion-source">Valencia Plaza (portada)</p></div>
+        <div><p class="difusion-title"><a href="http://www.valenciaplaza.com/ver/126119/la-zapatera-prodigiosa-de-lorca-aliviara-las-penas-del-teatro-el-musical----un-dia.html" target="_blank" rel="noopener">Frotalámparas «referente de exportación de cultura española»</a></p><p class="difusion-source">Valencia Plaza (portada)</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Mar 2014</span>
-        <div><p class="difusion-title">Nota de prensa sobre <em>La Zapatera Prodigiosa</em> antes de su llegada al Teatre El Musical de Valencia</p><p class="difusion-source">Valenciablog Arte y Cultura</p></div>
+        <div><p class="difusion-title"><a href="http://www.valenciablog.com/espectaculo-la-zapatera-prodigiosa-en-el-teatre-el-musical/" target="_blank" rel="noopener">Nota de prensa sobre <em>La Zapatera Prodigiosa</em> antes de su llegada al Teatre El Musical de Valencia</a></p><p class="difusion-source">Valenciablog Arte y Cultura</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Feb 2014</span>
-        <div><p class="difusion-title">El networking de las artes escénicas creado por Frotalámparas</p><p class="difusion-source">L'H Televisió</p></div>
+        <div><p class="difusion-title"><a href="http://www.lhdigital.cat/web/digital-h/televisio/veure-video/-/journal_content/56_INSTANCE_ZrP3/11023/8285687" target="_blank" rel="noopener">Connecting Artists en los informativos de L'Hospitalet</a></p><p class="difusion-source">L'H Televisió</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Feb 2014</span>
-        <div><p class="difusion-title">Connecting Artists, la nueva iniciativa de la compañía</p><p class="difusion-source">El Far (L'Hospitalet)</p></div>
+        <div><p class="difusion-title"><a href="http://elfar.cat/not/5909/l_hospitalet_organitza_una_trobada_especialitzada_en_les_arts_esceniques/" target="_blank" rel="noopener">L'Hospitalet organitza una trobada especialitzada en les arts escèniques</a></p><p class="difusion-source">El Far (L'Hospitalet)</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Nov 2013</span>
@@ -1075,47 +1119,47 @@
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Nov 2013</span>
-        <div><p class="difusion-title">La Companyia teatral Frotalamparas prepara una nova gira per Itàlia</p><p class="difusion-source">—</p></div>
+        <div><p class="difusion-title"><a href="http://lhdigital.cat/web/digital-h/noticia/cultura/-/journal_content/56_INSTANCE_43Th/11023/7845158" target="_blank" rel="noopener">La Companyia teatral Frotalamparas prepara una nova gira per Itàlia</a></p><p class="difusion-source">L'H Digital</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Jun 2012</span>
-        <div><p class="difusion-title">Entrevista a la Compañía tras una función en la Sala Porta 4</p><p class="difusion-source">Indienauta.com (Gina Tosas)</p></div>
+        <div><p class="difusion-title"><a href="http://ginatosas.wordpress.com/?p=183" target="_blank" rel="noopener">Entrevista a la Compañía tras una función en la Sala Porta 4</a></p><p class="difusion-source">Gina Tosas (periodista)</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Jun 2012</span>
-        <div><p class="difusion-title">Nota informativa sobre <em>Adelante</em> en su paso por la Sala Porta 4</p><p class="difusion-source">Indienauta.com</p></div>
+        <div><p class="difusion-title"><a href="http://indienauta.com/off/teatro-en-barcelona/5274-estreno-adelante-en-la-sala-porta-4/" target="_blank" rel="noopener">Nota informativa sobre <em>Adelante</em> en su paso por la Sala Porta 4</a></p><p class="difusion-source">Indienauta.com</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Feb 2012</span>
-        <div><p class="difusion-title">Entrevista a la directora Marta González</p><p class="difusion-source">Canal Sant Boi</p></div>
+        <div><p class="difusion-title"><a href="http://www.canalsantboi.blogspot.com.es/2012/02/entrevista-marta-gonzalez-directora-y.html" target="_blank" rel="noopener">Entrevista a la directora Marta González</a></p><p class="difusion-source">Canal Sant Boi</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Feb 2012</span>
-        <div><p class="difusion-title">Nota informativa sobre <em>Adelante</em> en su paso por Sant Boi</p><p class="difusion-source">Sant Boi Notícies</p></div>
+        <div><p class="difusion-title"><a href="http://www.sbn.cat/2012/02/21/teatre-adelante/" target="_blank" rel="noopener">Nota informativa sobre <em>Adelante</em> en su paso por Sant Boi</a></p><p class="difusion-source">Sant Boi Notícies</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Feb 2012</span>
-        <div><p class="difusion-title">Un pas endavant contra la violència de gènere</p><p class="difusion-source">Canal Sant Boi</p></div>
+        <div><p class="difusion-title"><a href="http://www.canalsantboi.blogspot.com.es/2012/02/un-pas-endavant-contra-la-violencia-de.html" target="_blank" rel="noopener">Un pas endavant contra la violència de gènere</a></p><p class="difusion-source">Canal Sant Boi</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Abr 2011</span>
-        <div><p class="difusion-title">Píldoras de Igualdad de la Fundación Agareso — Teatro Contra la Violencia de Género</p><p class="difusion-source">—</p></div>
+        <div><p class="difusion-title"><a href="http://www.agareso.org/blogs/i_seminario_usc/ag2/?p=171" target="_blank" rel="noopener">Píldoras de Igualdad de la Fundación Agareso</a></p><p class="difusion-source">Teatro Contra la Violencia de Género</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Jun 2011</span>
-        <div><p class="difusion-title">Primera entrevista en el programa El Carrer del Julivern — Presentación de la Compañía</p><p class="difusion-source">Radio Ciutat Vella, 100.5 FM</p></div>
+        <div><p class="difusion-title"><a href="http://vimeo.com/25768008/" target="_blank" rel="noopener">Primera entrevista en El Carrer del Julivern — Presentación de la Compañía</a></p><p class="difusion-source">Radio Ciutat Vella, 100.5 FM</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Jun 2011</span>
-        <div><p class="difusion-title">Entrevista y grabación del estreno de <em>Adelante</em></p><p class="difusion-source">Televisión L'H al Día (Informativos)</p></div>
+        <div><p class="difusion-title"><a href="http://vimeo.com/26033988/" target="_blank" rel="noopener">Entrevista y grabación del estreno de <em>Adelante</em></a></p><p class="difusion-source">Informativos L'H al Día</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Jun 2011</span>
-        <div><p class="difusion-title">Segunda entrevista con el elenco — El Carrer del Julivern</p><p class="difusion-source">Radio Ciutat Vella, 100.5 FM (Eduardo Reynalds)</p></div>
+        <div><p class="difusion-title"><a href="http://vimeo.com/26107591/" target="_blank" rel="noopener">Segunda entrevista con el elenco — El Carrer del Julivern</a></p><p class="difusion-source">Radio Ciutat Vella, 100.5 FM (con Eduardo Reynalds)</p></div>
       </li>
       <li class="difusion-item">
         <span class="difusion-date">Jun 2011</span>
-        <div><p class="difusion-title">Entrevista a Marta González en <em>Tots els matins</em></p><p class="difusion-source">DigitaL'H (radio y televisión)</p></div>
+        <div><p class="difusion-title"><a href="http://www.lhdigital.cat/c/journal/view_article_content?groupId=10911&articleId=3746312&version=1.0" target="_blank" rel="noopener">Entrevista a Marta González en <em>Tots els matins</em></a></p><p class="difusion-source">DigitaL'H</p></div>
       </li>
     </ul>
   </section>
@@ -1515,6 +1559,143 @@
   </div>
 </div>
 
+<!-- BODAS DE SANGRE -->
+<div id="modal-bodas" class="modal-overlay" onclick="closeModalOutside(event, 'bodas')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('bodas')">×</button>
+      <h2>Bodas de Sangre</h2>
+      <p class="tag">Original Version Spanish Theater · Gira Italia 2017-2018</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p><em><strong>Bodas de Sangre</strong></em> de Federico García Lorca. Adaptación y dirección de Marta González. Gira por más de 70 ciudades italianas en la temporada 2017-2018.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Texto original</span><span class="ficha-value">Federico García Lorca</span></div>
+          <div class="ficha-row"><span class="ficha-label">Adaptación y Dirección</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Temporada</span><span class="ficha-value">Gira Italia 2017-2018 · +70 ciudades</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeo</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/ssqg4EZjvTI" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">Bodas de Sangre — Gira Italia 2017-2018</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- LA ZAPATERA PRODIGIOSA GIRA ITALIA 2018-19 -->
+<div id="modal-zapatera2019" class="modal-overlay" onclick="closeModalOutside(event, 'zapatera2019')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('zapatera2019')">×</button>
+      <h2>La Zapatera Prodigiosa <small style="font-size:0.75em;font-weight:400">(Gira Italia 2018-19)</small></h2>
+      <p class="tag">Original Version Spanish Theater · Gira Italia 2018-2019</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p><em><strong>La Zapatera Prodigiosa</strong></em> de Federico García Lorca. Adaptación y dirección de Marta González. Nueva producción que recorrió más de 70 ciudades italianas en la temporada 2018-2019.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Texto original</span><span class="ficha-value">Federico García Lorca</span></div>
+          <div class="ficha-row"><span class="ficha-label">Adaptación y Dirección</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Temporada</span><span class="ficha-value">Gira Italia 2018-2019 · +70 ciudades</span></div>
+        </div>
+      </div>
+      <div class="modal-videos">
+        <h4>Vídeo</h4>
+        <div class="video-grid">
+          <div>
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/uY59S7m4aVQ" allowfullscreen loading="lazy"></iframe></div>
+            <p class="video-label">La Zapatera Prodigiosa — Gira Italia 2018-2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- EL CONSULTORIUM (MICRO TEATRO) -->
+<div id="modal-consultorium" class="modal-overlay" onclick="closeModalOutside(event, 'consultorium')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('consultorium')">×</button>
+      <h2>El Consultorium</h2>
+      <p class="tag">Micro Teatro · 2015</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p>El que lo puede todo, no puede más. Una comedia agnóstica sobre lo divino y lo humano, con un dios que se ha quedado sin respuestas.</p>
+          <p>Proyecto encargado por el Ajuntament de L'Hospitalet de Llobregat para <em>Las Càpsules 2015</em>, festival de microteatro en el espacio público.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia</span><span class="ficha-value">Marta González</span></div>
+          <div class="ficha-row"><span class="ficha-label">Dirección</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Interpretación</span><span class="ficha-value">Marta González, Jose Luis Fernández</span></div>
+          <div class="ficha-row"><span class="ficha-label">Producción</span><span class="ficha-value">Encargo del Ajuntament de L'Hospitalet de Llobregat</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MACARENA Y ROCÍO (MICRO TEATRO) -->
+<div id="modal-macarena" class="modal-overlay" onclick="closeModalOutside(event, 'macarena')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('macarena')">×</button>
+      <h2>Macarena y Rocío</h2>
+      <p class="tag">Micro Teatro · Comedia · 2015-2016</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p>Sevilla. Un altar. Dos vírgenes trasnochadas dispuestas a romper con 100 años de pasado. Macarena y Rocío, las dos vírgenes más famosas de Sevilla, se encuentran solas en el altar y deciden romper con todo lo que las ha encorsetado durante siglos.</p>
+          <p>Una de las microcomedias más taquilleras de Microteatro Sevilla en la temporada 2015-2016.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia</span><span class="ficha-value">Daniel Sieteiglesias</span></div>
+          <div class="ficha-row"><span class="ficha-label">Dirección</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Interpretación</span><span class="ficha-value">Carmen Boza, Marta González</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- LA REINA DE LAS CAUSAS IMPOSIBLES (MICRO TEATRO) -->
+<div id="modal-reina" class="modal-overlay" onclick="closeModalOutside(event, 'reina')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('reina')">×</button>
+      <h2>La Reina de las Causas Imposibles</h2>
+      <p class="tag">Micro Teatro · Drami-comedia · 2016</p>
+    </div>
+    <div class="modal-body">
+      <div class="modal-layout">
+        <div class="modal-desc">
+          <p>Alicia es la reina de las causas imposibles. Una micro drami-comedia embarazosa que sorprenderá por sus constantes giros. Alicia se ha quedado embarazada y tiene que comunicárselo a su pareja, pero la situación se complica de manera inesperada.</p>
+          <p>Representada en Microteatro Sevilla durante noviembre de 2016.</p>
+        </div>
+        <div class="modal-ficha">
+          <h4>Ficha Artística</h4>
+          <div class="ficha-row"><span class="ficha-label">Dramaturgia</span><span class="ficha-value">Rauli Jiménez</span></div>
+          <div class="ficha-row"><span class="ficha-label">Dirección</span><span class="ficha-value">Frotalámparas</span></div>
+          <div class="ficha-row"><span class="ficha-label">Interpretación</span><span class="ficha-value">Marta González, Oscar Salamanca</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- PERFIL (MICRO TEATRO) -->
 <div id="modal-perfil" class="modal-overlay" onclick="closeModalOutside(event, 'perfil')">
   <div class="modal">
