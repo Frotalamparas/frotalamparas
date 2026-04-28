@@ -73,20 +73,26 @@
       font-size: 1.5rem;
       color: var(--orange);
       text-decoration: none;
-      padding: 12px 0;
+      display: flex;
+      align-items: center;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
       line-height: 1.2;
     }
-
-    .logo span {
-      display: block;
-      font-size: 0.65rem;
-      font-family: 'Lato', sans-serif;
+    .logo img {
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.10));
+    }
+    /* override para que el span interno de logo-text no herede estilos del padre */
+    .logo-text > span {
+      font-size: 0.72rem;
       font-style: normal;
-      font-weight: 700;
-      letter-spacing: 0.12em;
       color: var(--text-lt);
+      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
+    .logo-text > br + span, .logo > span { display: none; }
 
     /* ===== NAVEGACIÓN ===== */
     nav {
@@ -601,8 +607,9 @@
 <header>
   <div class="header-inner">
     <a href="#inicio" class="logo">
-      Cía. de Teatro<br>Frotalámparas
-      <span>Archivo Histórico · 2011–2019</span>
+      <img src="logo.png" alt="Logo Frotalámparas" style="height:64px;width:auto;vertical-align:middle;margin-right:10px;">
+      <span class="logo-text">Cía. de Teatro<br>Frotalámparas
+      <span>Archivo Histórico · 2011–2019</span></span>
     </a>
     <nav>
       <a href="#compania">La Compañía</a>
