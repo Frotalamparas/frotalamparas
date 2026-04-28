@@ -519,32 +519,65 @@
       margin-bottom: 20px;
     }
 
-    /* ===== CONTACTO ===== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
+     /* ===== CONTACTO ===== */
+    .contact-form-wrap {
+      max-width: 600px;
+      margin: 0 auto;
     }
-
-    @media (max-width: 580px) { .contact-grid { grid-template-columns: 1fr; } }
-
-    .contact-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 20px 24px;
+    .contact-form-wrap p.contact-intro {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 28px;
+      font-size: 0.97rem;
     }
-
-    .contact-item h3 {
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-form label {
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--orange);
-      margin-bottom: 8px;
+      margin-bottom: 4px;
+      display: block;
     }
-
-    .contact-item p { font-size: 0.95rem; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--white);
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+    }
+    .contact-form textarea { resize: vertical; min-height: 130px; }
+    .contact-form .btn-send {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 14px 32px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.2s;
+    }
+    .contact-form .btn-send:hover { background: #c0390a; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -1354,15 +1387,27 @@
   <!-- ===== CONTACTO ===== -->
   <section id="contacto">
     <h2 class="section-title">Contacto</h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <h3>Dirección</h3>
-        <p>C/ Benidorm 8<br>41001 — Sevilla</p>
-      </div>
-      <div class="contact-item">
-        <h3>Teléfono</h3>
-        <p>(+34) 658 38 68 17</p>
-      </div>
+    <div class="contact-form-wrap">
+      <p class="contact-intro">¿Quieres ponerte en contacto con nosotros? Escríbenos y te responderemos a la mayor brevedad.</p>
+      <form class="contact-form" action="https://formspree.io/f/frotalamparas@gmail.com" method="POST">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div>
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+        </div>
+        <div>
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje">
+        </div>
+        <div>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+        <button type="submit" class="btn-send">Enviar mensaje</button>
+      </form>
     </div>
   </section>
 
