@@ -1389,10 +1389,14 @@
     <h2 class="section-title">Contacto</h2>
     <div class="contact-form-wrap">
       <p class="contact-intro">¿Quieres ponerte en contacto con nosotros? Escríbenos y te responderemos a la mayor brevedad.</p>
-      <form class="contact-form" action="https://formspree.io/f/frotalamparas@gmail.com" method="POST">
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+        <input type="hidden" name="access_key" value="19dc3340-5936-4134-87af-478b7bdde1ce">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde frotalamparas.es">
+        <input type="hidden" name="from_name" value="Web Frotalámparas">
+        <input type="checkbox" name="botcheck" style="display:none">
         <div>
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          <input type="text" id="nombre" name="name" placeholder="Tu nombre" required>
         </div>
         <div>
           <label for="email">Correo electrónico</label>
@@ -1404,10 +1408,42 @@
         </div>
         <div>
           <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          <textarea id="mensaje" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
         </div>
         <button type="submit" class="btn-send">Enviar mensaje</button>
+        <div id="form-result" style="margin-top:12px;font-weight:600;display:none;"></div>
       </form>
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = this.querySelector('.btn-send');
+          var result = document.getElementById('form-result');
+          btn.disabled = true;
+          btn.textContent = 'Enviando...';
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: new FormData(this)
+          }).then(function(res) { return res.json(); }).then(function(data) {
+            result.style.display = 'block';
+            if (data.success) {
+              result.style.color = '#e07b39';
+              result.textContent = '¡Mensaje enviado correctamente! Te responderemos pronto.';
+              document.getElementById('contact-form').reset();
+            } else {
+              result.style.color = '#c0392b';
+              result.textContent = 'Ha ocurrido un error. Por favor, inténtalo de nuevo.';
+            }
+            btn.disabled = false;
+            btn.textContent = 'Enviar mensaje';
+          }).catch(function() {
+            result.style.display = 'block';
+            result.style.color = '#c0392b';
+            result.textContent = 'Error de conexión. Por favor, inténtalo de nuevo.';
+            btn.disabled = false;
+            btn.textContent = 'Enviar mensaje';
+          });
+        });
+      </script>
     </div>
   </section>
 
