@@ -205,6 +205,7 @@
       border: 1px solid var(--border);
       border-radius: 6px;
       overflow: hidden;
+      position: relative;
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
@@ -215,6 +216,14 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
 
+    /* Contenedor relativo para la imagen + cabecera superpuesta */
+    .show-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+    }
+
     .show-card-img {
       width: 100%;
       height: 160px;
@@ -222,6 +231,21 @@
       object-position: center top;
       display: block;
     }
+    /* Cabecera superpuesta sobre la imagen cuando existe .show-card-img-wrap */
+    .show-card-img-wrap + .show-card-header {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(0);
+      transition: transform 0.35s ease;
+      margin: 0;
+    }
+
+    .show-card:hover .show-card-img-wrap + .show-card-header {
+      transform: translateY(100%);
+    }
+
     .show-card-header {
       background: linear-gradient(135deg, #7a4020, #b06535);
       color: var(--white);
@@ -707,8 +731,10 @@
       </div>
       <!-- La Zapatera Prodigiosa (2012-2013) -->
       <div class="show-card" onclick="openModal('zapatera')">
-        <img class="show-card-img" src="zapatera_2012.jpg" alt="La Zapatera Prodigiosa">
-        <div class="show-card-header"><h3>La Zapatera Prodigiosa</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="zapatera_2012.jpg" alt="La Zapatera Prodigiosa">
+          <div class="show-card-header"><h3>La Zapatera Prodigiosa</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Original Version Spanish Theater · 2012-2013</span>
           <p>García Lorca en comedia musical flamenca. Primera producción internacional de la compañía, con residencia en el C.C. La Bóbila de L'Hospitalet.</p>
@@ -717,8 +743,10 @@
       </div>
       <!-- Don Quijote de la Mancha (2013-2014) -->
       <div class="show-card" onclick="openModal('quijote')">
-        <img class="show-card-img" src="donquijote_2013.jpg" alt="Don Quijote de la Mancha">
-        <div class="show-card-header"><h3>Don Quijote de la Mancha</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="donquijote_2013.jpg" alt="Don Quijote de la Mancha">
+          <div class="show-card-header"><h3>Don Quijote de la Mancha</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Original Version Spanish Theater · 2013-2014</span>
           <p>La obra cumbre de Cervantes recorre más de 30 escenarios italianos como única compañía española en lengua original.</p>
@@ -727,8 +755,10 @@
       </div>
       <!-- El Perro del Hortelano (2014-2015) -->
       <div class="show-card" onclick="openModal('perro')">
-        <img class="show-card-img" src="perro_hortelano.jpg" alt="El Perro del Hortelano">
-        <div class="show-card-header"><h3>El Perro del Hortelano</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="perro_hortelano.jpg" alt="El Perro del Hortelano">
+          <div class="show-card-header"><h3>El Perro del Hortelano</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Original Version Spanish Theater · 2014-2015</span>
           <p>Lope de Vega adaptado a musical contemporáneo. Gira desde los Alpes a Sicilia en la temporada 2014-2015.</p>
@@ -737,8 +767,10 @@
       </div>
       <!-- Don Juan Tenorio (2015-2016) -->
       <div class="show-card" onclick="openModal('donjuan')">
-        <img class="show-card-img" src="donjuan_2015.jpg" alt="Don Juan Tenorio">
-        <div class="show-card-header"><h3>Don Juan Tenorio</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="donjuan_2015.jpg" alt="Don Juan Tenorio">
+          <div class="show-card-header"><h3>Don Juan Tenorio</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Original Version Spanish Theater · 2015-2016</span>
           <p>Clásico del Romanticismo español llevado a escena con esencia flamenca para la gira italiana. Temporada 2015-2016.</p>
@@ -747,8 +779,10 @@
       </div>
       <!-- El Espíritu de la Navidad (2016) -->
       <div class="show-card" onclick="openModal('navidad')">
-        <img class="show-card-img" src="navidad.jpg" alt="El Espíritu de la Navidad">
-        <div class="show-card-header"><h3>El Espíritu de la Navidad</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="navidad.jpg" alt="El Espíritu de la Navidad">
+          <div class="show-card-header"><h3>El Espíritu de la Navidad</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Familiar · Teatro Bus · 2016</span>
           <p>Espectáculo navideño familiar para Teatro Bus Sevilla. Sofía y Martín buscan recuperar los valores de la Navidad con la ayuda de un duendecillo.</p>
@@ -757,8 +791,10 @@
       </div>
       <!-- Juan Ramón y Yo (2016) -->
       <div class="show-card" onclick="openModal('juanramon')">
-        <img class="show-card-img" src="juanramon.jpg" alt="Juan Ramón y Yo">
-        <div class="show-card-header"><h3>Juan Ramón y Yo</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="juanramon.jpg" alt="Juan Ramón y Yo">
+          <div class="show-card-header"><h3>Juan Ramón y Yo</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Creación Contemporánea · 2016</span>
           <p>Dramaturgia propia basada en el Diario de dos recién casados de Juan Ramón Jiménez y Zenobia Camprubí. Un viaje íntimo a través de sus diarios.</p>
@@ -767,8 +803,10 @@
       </div>
       <!-- La Máquina del Tiempo (2017) -->
       <div class="show-card" onclick="openModal('maquina')">
-        <img class="show-card-img" src="maquina.jpg" alt="La Máquina del Tiempo">
-        <div class="show-card-header"><h3>La Máquina del Tiempo</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="maquina.jpg" alt="La Máquina del Tiempo">
+          <div class="show-card-header"><h3>La Máquina del Tiempo</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Familiar · Teatro Bus · 2017</span>
           <p>Espectáculo familiar diseñado para Teatro Bus Sevilla. Un viaje por la historia de Sevilla a bordo de un autobús convertido en teatro.</p>
@@ -777,8 +815,10 @@
       </div>
       <!-- Vamos a por CR7 (2017) -->
       <div class="show-card" onclick="openModal('cr7')">
-        <img class="show-card-img" src="cr7.jpg" alt="Vamos a por CR7">
-        <div class="show-card-header"><h3>Vamos a por CR7</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="cr7.jpg" alt="Vamos a por CR7">
+          <div class="show-card-header"><h3>Vamos a por CR7</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Creación Contemporánea · 2017</span>
           <p>Cuatro trabajadores de una inmobiliaria deciden secuestrar a un futbolista famoso para conseguir una apuesta millonaria. Una obra de humor y verdad humana.</p>
@@ -810,8 +850,10 @@
     <h2 class="section-title">Micro Teatro</h2>
     <div class="show-grid">
       <div class="show-card" onclick="openModal('perfil')">
-        <img class="show-card-img" src="perfil.jpg" alt="Perfil">
-        <div class="show-card-header"><h3>Perfil</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="perfil.jpg" alt="Perfil">
+          <div class="show-card-header"><h3>Perfil</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Micro Teatro · 2014</span>
           <p>En la era de las tecnologías, ¿quién se esconde tras el perfil? Un repaso de nuestra relación cotidiana con las redes sociales, de la mano de Carlota y Sofía.</p>
@@ -819,8 +861,10 @@
         </div>
       </div>
       <div class="show-card" onclick="openModal('consultorium')">
-        <img class="show-card-img" src="consultorium.jpg" alt="El Consultorium">
-        <div class="show-card-header"><h3>El Consultorium</h3></div>
+        <div class="show-card-img-wrap">
+          <img class="show-card-img" src="consultorium.jpg" alt="El Consultorium">
+          <div class="show-card-header"><h3>El Consultorium</h3></div>
+        </div>
         <div class="show-card-body">
           <span class="show-card-tag">Micro Teatro · 2015</span>
           <p>El que lo puede todo, no puede más. Una comedia agnóstica sobre lo divino. Proyecto encargado para Las Càpsules 2015 del Ajuntament de L'Hospitalet.</p>
