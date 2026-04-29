@@ -216,12 +216,16 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
 
-    /* Contenedor relativo para la imagen + cabecera superpuesta */
+    /* Contenedor de imagen con altura fija y overflow hidden para la animación */
     .show-card-img-wrap {
-      position: relative;
       width: 100%;
-      height: 160px;
+      height: 0;
       overflow: hidden;
+      transition: height 0.35s ease;
+    }
+
+    .show-card:hover .show-card-img-wrap {
+      height: 160px;
     }
 
     .show-card-img {
@@ -230,20 +234,6 @@
       object-fit: cover;
       object-position: center top;
       display: block;
-    }
-    /* Cabecera superpuesta sobre la imagen cuando existe .show-card-img-wrap */
-    .show-card-img-wrap + .show-card-header {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transform: translateY(0);
-      transition: transform 0.35s ease;
-      margin: 0;
-    }
-
-    .show-card:hover .show-card-img-wrap + .show-card-header {
-      transform: translateY(100%);
     }
 
     .show-card-header {
